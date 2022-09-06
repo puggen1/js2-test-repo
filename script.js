@@ -1,9 +1,15 @@
-console.log("test %d.", 1234567890);
+/** my @class  that does something*/
+class myClass{
+ /**
+  * This class does something that should be written here
+  * @author Bendik
+  * 
+  * 
+  */
+}
 
 
+console.log(":)");
 
-let myTest = ["en", "to"];
-console.log(myTest.entries)
-for ([index, nummer] of myTest.entries())[
-    console.log("%d. %s", index+1, nummer)
-]
+
+console.log(":(");
