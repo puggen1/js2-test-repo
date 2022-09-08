@@ -55,3 +55,20 @@ function addNumbers(a, b) {
   console.log(retrivedPet);
   let formatedPet = JSON.parse(retrivedPet);
   console.log(formatedPet)
+
+
+
+  const names = ['Ola', 'Kari', 'Joakim', 'Ole'];
+
+
+// 'name0' is index 0 in the array
+// 'name1' is index 1 in the array
+const [nameOne, nameTwo, ...allTheOthers] = names;
+
+console.log(nameOne, nameTwo);
+// Logs:
+// Ola Kari
+
+console.log(allTheOthers);
+// Logs:
+// ['Joakim', 'Ole']
