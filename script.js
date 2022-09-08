@@ -1,6 +1,9 @@
+/**@description cors to help get access to some api */
 const cors = "https://noroffcors.herokuapp.com/";
+/**@description the api the data comes from */
 let url = "https://www.geek.no/noroff/stuff/restauranter.json";
 
+/**@description the html target where list elements will be added to */
 let htmlList = document.querySelector("#myList");
 
 
@@ -34,8 +37,8 @@ async function getData(prefix="", data) {
 
 /**
  * used to get data from an object, so it is easy to access later
- * @param {object} data a list of restaurants and info about them
- * @returns {object} object of variables and html
+ * @param {array} data a list of restaurants and info about them
+ * @returns {array} array of variables and html
  * @example 
  * ```js
  * //when you want to get access to data and not write the whole json object
@@ -67,8 +70,7 @@ getData(cors, url);
 /**
  * Function to show content on html list
  * not universal, but might get updated
- * @param {object} data the Data you get from the api
- * @param {object} htmlTarget the place you want the data to be listed to
+ * @param {array} data the Data you get from the api
  * @example
  * ```js
  * //used to display specific content in a list
@@ -77,13 +79,12 @@ getData(cors, url);
  * //adds listitems to htmlTarget (ul or ol)
  * ```
  */
-function showData(data, htmlTarget) {
+function showData(data) {
   let returnedData = []
   let html = "";
   for(let i = 0; i < data.restaurants.length; i++){
   returnedData = formatData(data.restaurants[i])
   console.log(returnedData);
-  console.log(htmlTarget);
   html += `<li> <h2>${returnedData[0]}</h2> ${returnedData[1]} ${returnedData[2]} ${returnedData[3]}  </li>`;
  }  
   htmlList.innerHTML += html;}
